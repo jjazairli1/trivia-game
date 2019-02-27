@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html lang="eng-us">
+    
+<head>
+
+
+    <meta charset="UTF-8">
+    
+    <title>Triva Game</title>
+
+     <!-- CSS style sheet -->
+     <link rel="stylesheet" href="assets/css/style.css">
+    <!-- javascript file -->
+    <script src = "assets/javascript/app.js"></script>
+    <!-- jQuery <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+  <link rel="styleshet" href= "https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    
+</head>
+
+<body>
+
+    <h1 id="triviagame">Trivia Game Quiz!</h1>
+
+    <div id="timer"></div>
+    <script type="text/javascript">
+    
+    var total_seconds =60*2;
+    var c_minutes = parseInt(total_seconds/60);
+    var c_seconds = parseInt(total_seconds%60);
+    function CheckTime() {
+        document.getElementById("timer").innerHTML = 'Time Left: ' + c_minutes + ' minutes ' + c_seconds + ' seconds';
+        if (total_seconds <=0){
+            setTimeout('document.quiz.submit()', 1);
+        }
+        else { 
+            total_seconds = total_seconds - 1;
+            c_minutes = parseInt(total_seconds/60);
+            c_seconds = parseInt(total_seconds%60);
+            setTimeout ("CheckTime()" ,1000 );
+        }
+    }
+    setTimeout("CheckTime()",1000 );
+
+    </script>
+
+<form id = "quiz" name = "quiz">
+ 
+    <!-- <div id="display"> Start </div> -->
+
+    
+
+
+
+   <!-- <div id="next">Time Remaining: 01:30</div> --> 
+
+    <p>Who was the first man to land on the Moon?</p>
+    <input type = "radio" id = "mc" name = "q1" value = "Elon Musk"> Elon Musk <br>
+    <input type = "radio" id = "mc" name = "q1" value = "Neil Armstrong"> Neil Armstrong <br>
+    <input type = "radio" id = "mc" name = "q1" value = "Bill Gates"> Bill Gates <br>
+    <input type = "radio" id = "mc" name = "q1" value = "George Lopez"> George Lopez <br>
+
+    <p>What was the first computer to be released to the public?</p>
+    <input type = "radio" id = "mc" name = "q2" value = "MSI GT75"> MSI GT75 <br>
+    <input type = "radio" id = "mc" name = "q2" value = "Macintosh"> Macintosh <br>
+    <input type = "radio" id = "mc" name = "q2" value = "Altair 8800"> Altair 8800 <br>
+    <input type = "radio" id = "mc" name = "q2" value = "Alienware 17 R5"> Alienware 17 R5 <br>
+
+    <p>If Molly has 5 siblings; Monday, Tuesday, Wednesday, and Friday. Who was the fifth sibling?</p>
+    <input type = "radio" id = "mc" name = "q3" value = "Thursday"> Thursday <br>
+    <input type = "radio" id = "mc" name = "q3" value = "Tuesday"> Tuesday <br>
+    <input type = "radio" id = "mc" name = "q3" value = "Molly"> Molly <br>
+    <input type = "radio" id = "mc" name = "q3" value = "Saturday"> Saturday <br>
+    
+    <p>Timmy had a jar of cookies he brought to class that his mom made. If he gave Amanda 3 cookies, gave his best friend 4, and gave 1 to his teacher, and ate 2 for himslef. How many cookies did Timmy have in total?</p>
+    <input type = "radio" id = "mc" name = "q4" value = "3"> 3 <br>
+    <input type = "radio" id = "mc" name = "q4" value = "7"> 7 <br>
+    <input type = "radio" id = "mc" name = "q4" value = "10"> 10 <br>
+    <input type = "radio" id = "mc" name = "q4" value = "5"> 5 <br>
+
+   
+    <input id = "button" type = "button" value = "SUBMIT!" onclick = "check();">
+
+</form>
+
+
+<div id = "after_submit">
+    
+<p id = "number_correct"></p>        
+<p id = "message"></p>
+</div>
+</html>
+
+   
+   
+</body>
+
+</html>
